@@ -9,7 +9,7 @@ namespace EmployeePayRollTest
     public class UnitTest1
     {
         [TestMethod]
-        public void TestMethod1()
+        public void Given10Employee_AddedToList_ShouldMatchEmployeeEntries()
         {
             List<EmployeeDetails> list = new List<EmployeeDetails>
             {
@@ -30,7 +30,6 @@ namespace EmployeePayRollTest
             employeePayRollOperations.AddEmployeePayroll(list);
             DateTime stopDateTime = DateTime.Now;
             Console.WriteLine("Duration without thread" + (stopDateTime - startDateTime));
-
         }
     }
 }

@@ -18,8 +18,10 @@ namespace EmployeePayRoll
             });
             Console.WriteLine(this.EmployeeDetails.ToString());
         }
-    
-       public void AddEmployeePayroll(EmployeeDetails emp)
+
+        
+
+        public void AddEmployeePayroll(EmployeeDetails emp)
        {
             EmployeeDetails.Add(emp);
        }
