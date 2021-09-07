@@ -19,7 +19,22 @@ namespace EmployeePayRoll
             Console.WriteLine(this.EmployeeDetails.ToString());
         }
 
-        
+        public void AddEmployeeToPayrollWithTread(List<EmployeeDetails> list)
+        {
+            list.ForEach(EmployeeData =>
+            {
+                Task thread = new Task(() =>
+                {
+                    Console.WriteLine("Emp bieng Added: " + EmployeeData.EmployeeName);
+                    this.AddEmployeePayroll(EmployeeData);
+                    Console.WriteLine("Emp added:" + EmployeeData.EmployeeName);
+
+                });
+                thread.Start();
+                Console.WriteLine(this.EmployeeDetails.Count);
+            }
+            );
+        }
 
         public void AddEmployeePayroll(EmployeeDetails emp)
        {
